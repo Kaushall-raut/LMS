@@ -1,9 +1,13 @@
+import { Auth } from "@/pages/auth";
 import { Button } from "./components/ui/button";
+import { Route, Routes } from "react-router-dom";
 
 export const App = () => {
   return (
     <>
-      <Button>Click</Button>
+      <Routes>
+        <Route path="/auth" element={<Auth />} />
+      </Routes>
     </>
   );
 };
