@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require("cors");
-const { authorization } = require("paypal-rest-sdk");
+// const { authorization } = require("paypal-rest-sdk");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -23,7 +23,7 @@ app.use(express.json()); //! Middleware
 mongoose
   .connect(MONGO_URI)
   .then(() => console.log("Db is now connected "))
-  .catch((e) => console.log("connection Loss"));
+  .catch((e) => console.log(" db connection Loss"));
 
 app.listen(PORT, () => {
   //! without it your application will not be accessible over the network and your server will not start
