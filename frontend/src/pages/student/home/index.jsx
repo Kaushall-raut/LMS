@@ -3,10 +3,10 @@ import banner from "../../../../public/banner-img.png";
 import { Button } from "@/components/ui/button";
 import { useContext, useEffect } from "react";
 import { StudentContext } from "@/context/student-context";
-import {
-  checkCoursePurchaseInfoService,
-  fetchStudentViewCourseListService,
-} from "@/services";
+// import {
+//   checkCoursePurchaseInfoService,
+//   fetchStudentViewCourseListService,
+// } from "@/services";
 import { AuthContext } from "@/context/auth-context";
 import { useNavigate } from "react-router-dom";
 

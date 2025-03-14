@@ -13,6 +13,7 @@ function CourseLanding() {
         <CardTitle>Course Landing Page</CardTitle>
       </CardHeader>
       <CardContent>
+        
         <FormControls
           formControls={courseLandingPageFormControls}
           formData={courseLandingFormData}

@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000; //!  IF port not present than take 5000 a
 const MONGO_URI = process.env.MONGO_URI;
 
 const authRoutes = require("./routes/auth-routes/index");
+const mediaRoutes = require("./routes/instructor-routes/media-routes");
 
 app.use(
   cors({
@@ -38,3 +39,4 @@ app.listen(PORT, () => {
 //! triggering routes at particular end point to invoke the function
 
 app.use("/auth", authRoutes);
+app.use("/media", mediaRoutes);

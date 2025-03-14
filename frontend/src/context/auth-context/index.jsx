@@ -47,7 +47,7 @@ export default function AuthProvider({ children }) {
   async function handleLoginUser(event) {
     event.preventDefault();
     const data = await loginService(signInFormData);
-    console.log(data, "data");
+    // console.log(data, "data");
 
     if (data.success) {
       sessionStorage.setItem(
@@ -107,7 +107,7 @@ export default function AuthProvider({ children }) {
     checkAuthUser();
   }, []);
 
-  console.log(auth, "gf");
+  // console.log(auth, "auth info");
 
   return (
     <AuthContext.Provider

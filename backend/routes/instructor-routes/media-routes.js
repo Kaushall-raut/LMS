@@ -17,7 +17,7 @@ router.post("/upload", upload.single("file"), async (req, res) => {
       data: result,
     });
   } catch (e) {
-    console.log(e);
+    console.log("error",e);
 
     res.status(500).json({ success: false, message: "Error uploading file" });
   }
@@ -30,7 +30,7 @@ router.delete("/delete/:id", async (req, res) => {
     if (!id) {
       return res.status(400).json({
         success: false,
-        message: "Assest Id is required",
+        message: "Asset Id is required",
       });
     }
 
@@ -43,7 +43,7 @@ router.delete("/delete/:id", async (req, res) => {
   } catch (e) {
     console.log(e);
 
-    res.status(500).json({ success: false, message: "Error deleting file" });
+    res.status(500).json({ success: false, message: "failed to delete" });
   }
 });
 
