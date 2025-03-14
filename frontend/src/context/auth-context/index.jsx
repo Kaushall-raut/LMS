@@ -25,7 +25,7 @@
 
 import { Skeleton } from "@/components/ui/skeleton";
 import { initialSignInFormData, initialSignUpFormData } from "@/config";
-import { checkAuthService, loginService, registerService } from "@/services";
+import { registerService, loginService } from "@/services";
 import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext(null);
@@ -47,7 +47,7 @@ export default function AuthProvider({ children }) {
   async function handleLoginUser(event) {
     event.preventDefault();
     const data = await loginService(signInFormData);
-    console.log(data, "datadatadatadatadata");
+    console.log(data, "data");
 
     if (data.success) {
       sessionStorage.setItem(

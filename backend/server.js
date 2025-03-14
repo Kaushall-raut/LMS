@@ -10,11 +10,15 @@ const PORT = process.env.PORT || 5000; //!  IF port not present than take 5000 a
 
 const MONGO_URI = process.env.MONGO_URI;
 
-cors({
-  origin: process.env.CLIENT,
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: [("Content-type", "Authorization")],
-});
+const authRoutes = require("./routes/auth-routes/index");
+
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL,
+    methods: ["GET", "POST", "DELETE", "PUT"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 
 app.use(express.json()); //! Middleware
 
@@ -30,3 +34,7 @@ app.listen(PORT, () => {
   //! and also handle upcoming http Request
   console.log(`server is running on ${PORT}`);
 });
+
+//! triggering routes at particular end point to invoke the function
+
+app.use("/auth", authRoutes);
