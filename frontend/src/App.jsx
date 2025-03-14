@@ -1,4 +1,4 @@
-import { Auth } from "@/pages/auth";
+import Auth from "@/pages/auth";
 import { Button } from "./components/ui/button";
 import { Route, Routes } from "react-router-dom";
 
