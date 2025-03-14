@@ -1,9 +1,9 @@
-// import MediaProgressbar from "@/components/media-progress-bar";
+import MediaProgressbar from "@/components/media-progress-bar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { InstructorContext } from "@/context/instructor-context";
-// import { mediaUploadService } from "@/services";
+import { mediaUploadService } from "@/services";
 import { useContext } from "react";
 
 function CourseSettings() {
@@ -48,12 +48,12 @@ function CourseSettings() {
         <CardTitle>Course Settings</CardTitle>
       </CardHeader>
       <div className="p-4">
-        {/* {mediaUploadProgress ? (
+        {mediaUploadProgress ? (
           <MediaProgressbar
             isMediaUploading={mediaUploadProgress}
             progress={mediaUploadProgressPercentage}
           />
-        ) : null} */}
+        ) : null}
       </div>
       <CardContent>
         {courseLandingFormData?.image ? (

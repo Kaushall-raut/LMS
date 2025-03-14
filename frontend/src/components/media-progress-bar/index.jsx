@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function MediaProgressbar({ isMediaUploading, progress }) {
   const [showProgress, setShowProgress] = useState(false);
@@ -22,7 +22,7 @@ function MediaProgressbar({ isMediaUploading, progress }) {
 
   return (
     <div className="w-full bg-gray-200 rounded-full h-3 mt-5 mb-5 relative overflow-hidden">
-      {/* <motion.div
+      <motion.div
         className="bg-blue-600 h-3 rounded-full"
         initial={{ width: 0 }}
         animate={{
@@ -43,7 +43,7 @@ function MediaProgressbar({ isMediaUploading, progress }) {
             }}
           />
         )}
-      </motion.div> */}
+      </motion.div>
     </div>
   );
 }

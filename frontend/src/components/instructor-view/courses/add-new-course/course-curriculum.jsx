@@ -1,4 +1,4 @@
-// import MediaProgressbar from "@/components/media-progress-bar";
+import MediaProgressbar from "@/components/media-progress-bar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -232,12 +232,12 @@ function CourseCurriculum() {
         >
           Add Lecture
         </Button>
-        {/* {mediaUploadProgress ? (
+        {mediaUploadProgress ? (
           <MediaProgressbar
             isMediaUploading={mediaUploadProgress}
             progress={mediaUploadProgressPercentage}
           />
-        ) : null} */}
+        ) : null}
         <div className="mt-4 space-y-4">
           {courseCurriculumFormData.map((curriculumItem, index) => (
             <div className="border p-5 rounded-md" key={index}>
