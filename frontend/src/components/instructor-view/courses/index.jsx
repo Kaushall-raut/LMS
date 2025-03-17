@@ -61,7 +61,10 @@ function InstructorCourses({ listOfCourses }) {
                       </TableCell>
                       <TableCell>{course?.students?.length}</TableCell>
                       <TableCell>
-                        ${course?.students?.length * course?.pricing}
+                      {console.log(course?.pricing)
+                      }
+                      ${course?.pricing}
+                        {/* $ {course?.students?.length * course?.pricing} */}
                       </TableCell>
                       <TableCell className="text-right">
                         <Button

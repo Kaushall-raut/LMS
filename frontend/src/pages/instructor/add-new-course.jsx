@@ -12,8 +12,8 @@ import { AuthContext } from "@/context/auth-context";
 import { InstructorContext } from "@/context/instructor-context";
 import {
   addNewCourseService,
-  // fetchInstructorCourseDetailsService,
-  // updateCourseByIdService,
+  fetchInstructorCourseDetailsService,
+  updateCourseByIdService,
 } from "@/services";
 import { useContext, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";

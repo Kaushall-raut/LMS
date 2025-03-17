@@ -10,7 +10,7 @@ const getAllStudentViewCourses = async (req, res) => {
       sortBy = "price-lowtohigh",
     } = req.query;
 
-    console.log(req.query, "req.query");
+    // console.log(req.query, "req.query");
 
     let filters = {};
     if (category.length) {
@@ -88,27 +88,59 @@ const getStudentViewCourseDetails = async (req, res) => {
   }
 };
 
+// const checkCoursePurchaseInfo = async (req, res) => {
+//   try {
+//     const { id, studentId } = req.params;
+//     const studentCourses = await StudentCourses.findOne({
+//       userId: studentId,
+//     });
+
+//     const ifStudentAlreadyBoughtCurrentCourse =
+//       studentCourses.courses.findIndex((item) => item.courseId === id) > -1;
+//     res.status(200).json({
+//       success: true,
+//       data: ifStudentAlreadyBoughtCurrentCourse,
+//     });
+//   } catch (e) {
+//     console.log(e);
+//     res.status(500).json({
+//       success: false,
+//       message: "Some error occured!",
+//     });
+//   }
+// };
 const checkCoursePurchaseInfo = async (req, res) => {
   try {
     const { id, studentId } = req.params;
-    const studentCourses = await StudentCourses.findOne({
-      userId: studentId,
-    });
 
+    // Fetch student courses
+    const studentCourses = await StudentCourses.findOne({ userId: studentId });
+
+    // If no entry found, return false
+    if (!studentCourses) {
+      return res.status(200).json({
+        success: true,
+        data: false, // Student hasn't purchased any course
+      });
+    }
+
+    // Check if student has already purchased the course
     const ifStudentAlreadyBoughtCurrentCourse =
-      studentCourses.courses.findIndex((item) => item.courseId === id) > -1;
+      studentCourses.courses.some((item) => item.courseId.toString() === id);
+
     res.status(200).json({
       success: true,
       data: ifStudentAlreadyBoughtCurrentCourse,
     });
   } catch (e) {
-    console.log(e);
+    console.error("Error in checkCoursePurchaseInfo:", e);
     res.status(500).json({
       success: false,
-      message: "Some error occured!",
+      message: "Some error occurred!",
     });
   }
 };
+
 
 module.exports = {
   getAllStudentViewCourses,
